@@ -66,7 +66,53 @@ function calculararea($lado) {
 $area = $lado * $lado;
     echo "A area do quadrado de lado $lado é igual a $area";
     echo "<br>";
-    return ($lado);
+    return $lado;
 }
 echo calculararea(5);
+?>
+
+<?php 
+echo "<br>";
+
+
+function verificacao($senha){
+    
+    $maiuscula = false;
+    $minuscula = false;
+    $caracteres = false;
+    $numbers = false;
+
+if (strlen($caracteres)>=8 ){
+
+    $caracteres = true;
+}
+
+foreach( str_split($senha) as $bict){
+
+    if (ctype_upper($bict)){
+        $maiuscula = true;
+    }
+    elseif(ctype_lower($bict)){
+        $minuscula = true;
+    }
+    elseif(ctype_digit($bict)){
+        $numbers = true;
+    }
+}
+    if($maiuscula && $minuscula && $numbers && $caracteres = true){
+
+        echo "Sua senha atingiu todos os parâmetros";
+    }
+    else{
+        echo "Sua senha não atendeu os parâmetros";
+    }
+}
+
+    verificacao("Carro");
+?>
+
+
+<?php 
+
+
 ?>
